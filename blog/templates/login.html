@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div>
+    <form action='/login_acc/?next={{ next }}' method='POST'>
+        {% csrf_token %}
+        <input type='text' name='username' />
+        <input type='password' name='password' />
+        <input type='submit' value='Login' />
+
+         <span style='color:red'>{{login_err}}</span>
+    </form>
+</div>
+
+{% endblock %}
